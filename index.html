@@ -6,11 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit + TS</title>
     <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/my-element.ts"></script>
+    <script type="module" src="/src/my-panel.ts"></script>
+
+    <style>
+      my-panel {
+        --my-panel-primary-bg: lightgreen;
+        --my-panel-primary-color: #222
+      }
+    </style>
   </head>
   <body>
-    <my-element>
-      <h1>Vite + Lit</h1>
-    </my-element>
+    <my-panel title="Cem2" opened icon="✅">
+      test slot
+    </my-panel>
+
+    <script>
+      const el = document.querySelector("my-panel");
+      el.addEventListener('icon-click', () => {
+        console.log("clicked")
+      })
+    </script>
   </body>
 </html>

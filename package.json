@@ -5,9 +5,12 @@
   "type": "module",
   "main": "dist/my-panel.js",
   "exports": {
-    ".": "./dist/my-panel.js"
+    ".": {
+      "import": "./dist/my-panel.js",
+      "types": "./dist/types/my-panel.d.ts"
+    }
   },
-  "types": "types/my-panel.ts",
+  "types": "./dist/types/my-panel.d.ts",
   "files": [
     "dist"
   ],

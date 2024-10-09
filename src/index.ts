@@ -1,4 +1,4 @@
-import { MyPanel, MyPanelReact } from "./my-panel";
+import { MyPanel, MyPanelReact } from "./components/my-panel";
 
 export {
 	MyPanel,

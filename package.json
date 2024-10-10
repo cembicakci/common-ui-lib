@@ -1,16 +1,16 @@
 {
-  "name": "my-panel",
+  "name": "ui-lib",
   "private": false,
   "version": "0.0.1",
   "type": "module",
   "main": "dist/my-panel.js",
   "exports": {
     ".": {
-      "import": "./dist/my-panel.js",
-      "types": "./dist/types/my-panel.d.ts"
+      "import": "./dist/ui-lib.js",
+      "types": "./dist/types/ui-lib.d.ts"
     }
   },
-  "types": "./dist/types/my-panel.d.ts",
+  "types": "./dist/types/ui-lib.d.ts",
   "files": [
     "dist"
   ],

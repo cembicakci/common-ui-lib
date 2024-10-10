@@ -6,25 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit + TS</title>
     <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/my-panel.ts"></script>
-
-    <style>
-      my-panel {
-        --my-panel-primary-bg: lightgreen;
-        --my-panel-primary-color: #222
-      }
-    </style>
+    <script type="module" src="/src/index.ts"></script>
   </head>
   <body>
-    <my-panel title="Cem2" opened icon="✅">
-      test slot
-    </my-panel>
+
+    <div class="content">
+          <!-- My Panel -->
+          <div>
+            <my-panel title="Click Here" opened icon="✅">Panel Opened</my-panel>
+          </div>
+      
+          <!-- My Button -->
+          <div>
+            <my-button label="Primary Button" id="primary"></my-button>
+            <my-button label="Secondary Button" variant="secondary" id="secondary"></my-button>
+            <my-button label="Tertiary Button" variant="tertiary" id="tertiary"></my-button>
+          </div>
+    </div>
 
     <script>
       const el = document.querySelector("my-panel");
       el.addEventListener('icon-click', () => {
         console.log("clicked")
       })
+
+      const primaryButton = document.querySelector('#primary');
+      const secondaryButton = document.querySelector('#secondary');
+      const tertiaryButton = document.querySelector('#tertiary');
+
+      primaryButton.addEventListener('button-click', () => {
+        alert('Primary button clicked!');
+      });
+
+      secondaryButton.addEventListener('button-click', () => {
+        alert('Secondary button clicked!');
+      });
+
+      tertiaryButton.addEventListener('button-click', () => {
+        alert('Tertiary button clicked!');
+      });
     </script>
   </body>
 </html>

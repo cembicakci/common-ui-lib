@@ -1,11 +1,11 @@
+import React from "react";
 import { createComponent } from "@lit/react";
 import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { when } from "lit/directives/when.js";
-import React from "react";
 
 @customElement("my-panel")
-export class MyPanel extends LitElement {
+export class MyPanelElement extends LitElement {
 
 	@property({ type: String })
 	title = "Widget";
@@ -24,15 +24,18 @@ export class MyPanel extends LitElement {
 
 	static styles = css`
 		.title {
-			background: var(--my-panel-primary-bg);
-			color: var(--my-panel-primary-color);
+			background: lightgreen;
+			color: #222;
 			padding: 0.8rem;
+			display: flex;
+			gap: 12px;
+			cursor: pointer;
 
 		}
 
 		.body {
 			padding: 1rem;
-			border: 1px solid var(--my-panel-primary-bg);
+			border: 1px solid lightgreen;
 		}
 	`
 
@@ -51,9 +54,9 @@ export class MyPanel extends LitElement {
 	}
 }
 
-export const MyPanelReact = createComponent({
+export const MyPanel = createComponent({
 	tagName: 'my-panel',
-	elementClass: MyPanel,
+	elementClass: MyPanelElement,
 	react: React,
 	events: {}
 
@@ -61,7 +64,7 @@ export const MyPanelReact = createComponent({
 
 declare global {
 	interface HTMLElementTagNameMap {
-		'my-panel': MyPanel
+		'my-panel': MyPanelElement
 	}
 }
 
